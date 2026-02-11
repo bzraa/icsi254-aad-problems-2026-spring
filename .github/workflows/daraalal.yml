@@ -1,0 +1,18 @@
+name: daraalal-tests
+
+on:
+  push:
+    paths:
+      - "daraalal/**"
+      - ".github/workflows/daraalal.yml"
+  pull_request:
+    paths:
+      - "daraalal/**"
+      - ".github/workflows/daraalal.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 daraalal/run_test.py
