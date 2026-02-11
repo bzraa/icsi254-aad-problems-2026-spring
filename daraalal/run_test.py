@@ -33,13 +33,13 @@ def run(cmd, inp: str) -> str:
 
 def main():
     root = Path(__file__).resolve().parent
-    tests = root / "tests"
+    test = root / "test"
 
     cpp = root / "solution.cpp"
     py  = root / "solution.py"
 
-    if not tests.exists():
-        print("Missing tests folder:", tests)
+    if not test.exists():
+        print("Missing test folder:", test)
         return 1
 
     runner = None
@@ -54,15 +54,15 @@ def main():
         print("Missing solution.cpp or solution.py in", root)
         return 1
 
-    in_files = sorted(tests.glob("*.in"))
+    in_files = sorted(test.glob("*.in"))
     if not in_files:
-        print("No .in files in", tests)
+        print("No .in files in", test)
         return 1
 
     ran = 0
     for in_path in in_files:
         name = in_path.stem
-        out_path = tests / f"{name}.out"
+        out_path = test / f"{name}.out"
         if not out_path.exists():
             print(f"[SKIP] {name}: missing {out_path.name}")
             continue
@@ -91,10 +91,10 @@ def main():
         ran += 1
 
     if ran == 0:
-        print("No tests executed (maybe missing .out files).")
+        print("No test executed (maybe missing .out files).")
         return 1
 
-    print(f"\nAll tests passed: {ran}")
+    print(f"\nAll test passed: {ran}")
     return 0
 
 if __name__ == "__main__":
