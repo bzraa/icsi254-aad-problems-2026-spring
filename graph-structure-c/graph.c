@@ -24,19 +24,19 @@ void gr_add_edge_undirected(Graph *g, int x, int y, float weight)
 
 void gr_read(Graph *g, int n, int m, int isDirected, int hasWeight){
 	int i, x, y, w;
-	gr_init_graph(&g, n);
+	gr_init_graph(g, n);
 	if(hasWeight){
 		for (i = 0; i < m; i++) {
 			scanf("%d%d%f", &x, &y, &w);
-			if(isDirected) gr_add_edge(&g, x, y, w);
-			else gr_add_edge_undirected(&g, x, y, w);
+			if(isDirected) gr_add_edge(g, x, y, w);
+			else gr_add_edge_undirected(g, x, y, w);
 		}
 	}
 	else {
 		for (i = 0; i < m; i++) {
 			scanf("%d%d", &x, &y);
-			if(isDirected) gr_add_edge(&g, x, y, 1);
-			else gr_add_edge_undirected(&g, x, y, 1);
+			if(isDirected) gr_add_edge(g, x, y, 1);
+			else gr_add_edge_undirected(g, x, y, 1);
 		}
 	}
 }
