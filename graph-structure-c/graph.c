@@ -27,7 +27,7 @@ void gr_read(Graph *g, int n, int m, int isDirected, int hasWeight){
 	gr_init_graph(&g, n);
 	if(hasWeight){
 		for (i = 0; i < m; i++) {
-			scanf("%d%d%d", &x, &y, &w);
+			scanf("%d%d%f", &x, &y, &w);
 			if(isDirected) gr_add_edge(&g, x, y, w);
 			else gr_add_edge_undirected(&g, x, y, w);
 		}
@@ -35,8 +35,8 @@ void gr_read(Graph *g, int n, int m, int isDirected, int hasWeight){
 	else {
 		for (i = 0; i < m; i++) {
 			scanf("%d%d", &x, &y);
-			if(isDirected) gr_add_edge(&g, x, y, w);
-			else gr_add_edge_undirected(&g, x, y, w);
+			if(isDirected) gr_add_edge(&g, x, y, 1);
+			else gr_add_edge_undirected(&g, x, y, 1);
 		}
 	}
 }
