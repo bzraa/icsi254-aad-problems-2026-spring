@@ -62,5 +62,9 @@ void gr_init_graph(Graph *, int);
 void gr_add_edge(Graph *, int, int, float);
 void gr_add_edge_undirected(Graph *, int, int, float);
 void gr_read(Graph *, int, int, int, int);
+void gr_bfs(Graph *, int, int[], int[]);
+void gr_print_path(Graph *, int, int, int[]);
+void gr_dfs(Graph *, int[], int[], int[]);
+void gr_dfs_visit(Graph *, int, int[], int[], int[], int[], int *);
 
 #endif
