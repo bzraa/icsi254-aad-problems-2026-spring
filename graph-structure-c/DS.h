@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #define WHITE 0
 #define GRAY 1
 #define BLACK 2

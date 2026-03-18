@@ -23,7 +23,8 @@ void gr_add_edge_undirected(Graph *g, int x, int y, float weight)
 }
 
 void gr_read(Graph *g, int n, int m, int isDirected, int hasWeight){
-	int i, x, y, w;
+	int i, x, y;
+	float w;
 	gr_init_graph(g, n);
 	if(hasWeight){
 		for (i = 0; i < m; i++) {

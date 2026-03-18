@@ -1,4 +1,4 @@
-#include "../graph-structure-c/DS.h"
+#include "../../graph-structure-c/DS.h"
 
 void dfs(Graph *g, int x, int visited[]){
 	if(visited[x]==0) {
